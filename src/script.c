@@ -168,7 +168,6 @@ void script_response(lua_State *L, int status, uint64_t start, uint64_t latency,
     lua_getglobal(L, "response");
     lua_pushinteger(L, status);
     lua_pushinteger(L, start);
-    lua_pushinteger(L, latency);
     lua_newtable(L);
 
     for (char *c = headers->buffer; c < headers->cursor; ) {
