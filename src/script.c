@@ -179,7 +179,7 @@ void script_response(lua_State *L, int status, uint64_t start, uint64_t latency,
     }
 
     lua_pushlstring(L, body->buffer, body->cursor - body->buffer);
-    lua_call(L, 3, 0);
+    lua_call(L, 5, 0);
 
     buffer_reset(headers);
     buffer_reset(body);
