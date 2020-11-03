@@ -165,10 +165,10 @@ void script_request(lua_State *L, char **buf, size_t *len) {
 }
 
 
-void script_response(lua_State *L, int status, uint64_t start, uint64_t latency, buffer *headers, buffer *body) {
+void script_response(lua_State *L, int status, uint64_t startTime, uint64_t latency, buffer *headers, buffer *body) {
     lua_getglobal(L, "response");
     lua_pushinteger(L, status);
-    lua_pushinteger(L, start);
+    lua_pushinteger(L, startTime);
     lua_pushinteger(L, latency);
     lua_newtable(L);
 
